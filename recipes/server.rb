@@ -3,9 +3,9 @@ powershell_script 'Install IIS' do
   Import-Module ServerManager
   Add-WindowsFeature Web-Server
   EOH
-  file 'C:\inetpub\wwwroot\Default.ht' do
-    content '<h1>Hello,world!</h1>'
-  end
+  template 'C:\inetpub\wwwroot\Default.htm' do
+  source 'Default.htm.erb'
+end
   service 'w3svc' do
     action [:enable, :start]
   end

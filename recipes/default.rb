@@ -1,2 +1,2 @@
 #include_recipe 'workstation:disable-uac'
-include_recipe 'nyiis::ServerManager'
+include_recipe 'myiis::ServerManager'
